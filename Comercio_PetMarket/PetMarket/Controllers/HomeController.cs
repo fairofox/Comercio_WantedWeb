@@ -13,5 +13,9 @@ namespace PetMarket.Controllers
         {
             return View();
         }
+        public ActionResult Buscar()
+        {
+            return View();
+        }
     }
 }
