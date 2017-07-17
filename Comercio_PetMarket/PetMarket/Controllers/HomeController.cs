@@ -8,14 +8,18 @@ namespace PetMarket.Controllers
 {
     public class HomeController : Controller
     {
+        private Models.PetsDataEntities bd = new Models.PetsDataEntities();
         // GET: Home
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult Buscar()
-        {
-            return View();
+        public ActionResult Buscar(String id="")
+        {   
+            //Logica para el acceso a la base de datos
+            var productos = bd.Producto.Where(x => x.Descripcion.Contains(id));
+            //Lista de productos
+            return View(productos);
         }
     }
 }
