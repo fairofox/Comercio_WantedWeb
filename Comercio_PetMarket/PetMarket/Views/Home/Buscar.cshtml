@@ -144,35 +144,10 @@
                             </div>
                             <div class="clearfix"> </div>
                         </div>
-                    </div>
-                    <div class="brand-w3l">
-                        <h3>Brands Filter</h3>
-                        <ul>
-                            <li><a href="#">Ralph Lauren</a></li>
-                            <li><a href="#">adidas</a></li>
-                            <li><a href="#">Bottega Veneta</a></li>
-                            <li><a href="#">Valentino</a></li>
-                            <li><a href="#">Nike</a></li>
-                            <li><a href="#">Burberry</a></li>
-                            <li><a href="#">Michael Kors</a></li>
-                            <li><a href="#">Louis Vuitton</a></li>
-                            <li><a href="#">Jimmy Choo</a></li>
-                        </ul>
-                    </div>
-                    <div class="cat-img">
-                        <img class="img-responsive " src="~/images/45.jpg" alt="">
-                    </div>
+                    </div>                  
+                    
                 </div>
-                <div class="col-md-9 product-agileinfon-grid1 w3l">
-                    <div class="product-agileinfon-top">
-                        <div class="col-md-6 product-agileinfon-top-left">
-                            <img class="img-responsive " src="~/images/img1.jpg" alt="">
-                        </div>
-                        <div class="col-md-6 product-agileinfon-top-left">
-                            <img class="img-responsive " src="~/images/img2.jpg" alt="">
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
+                <div class="col-md-9 product-agileinfon-grid1 w3l">                    
                     <div class="mens-toolbar">
                         <p>Showing 1–9 of 21 results</p>
                         <p class="showing">
@@ -207,16 +182,18 @@
                                     @*----------------------producto--------------------------------------*@
                                     @foreach (var item in Model)
                                     {
+                                        var imagen = @item.ProductoImagen.FirstOrDefault();
+                                        string img = imagen == null ? "no_disponible.jpg" : imagen.Imagen;
                                         <div class="col-md-4 product-tab-grid simpleCart_shelfItem">
                                             <div class="grid-arr">
                                                 <div class="grid-arrival">
                                                     <figure>
                                                         <a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
                                                             <div class="grid-img">
-                                                                <img src="~/images/p21.jpg" class="img-responsive" alt="">
+                                                                <img src="~/ImgProductos/@img" class="img-responsive" alt="">
                                                             </div>
                                                             <div class="grid-img">
-                                                                <img src="~/images/p22.jpg" class="img-responsive" alt="">
+                                                                <img src="~/ImgProductos/@img" class="img-responsive" alt="">
                                                             </div>
                                                         </a>
                                                     </figure>
@@ -229,7 +206,7 @@
                                                     <span class="no-margin isotope--title">@item.Descripcion</span>
                                                     <p><em class="item_price">S/@item.Precio</em></p>
                                                     @*<p><del>S/.@item.Precio</del>@*<em class="item_price">$70.00</em>(para promociones)</p>*@
-                                                    <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+                                                    <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Al carrito</a>
                                                 </div>
                                             </div>
                                         </div>
