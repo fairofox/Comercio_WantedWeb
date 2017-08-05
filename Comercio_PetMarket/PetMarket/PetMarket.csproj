@@ -330,6 +330,8 @@
     <Content Include="Views\Compra\Paso2.cshtml" />
     <Content Include="Views\Compra\Paso3.cshtml" />
     <Content Include="Views\Compra\Paso4.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
